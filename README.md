@@ -1,6 +1,6 @@
 # LineaForge Studio — Beta
 
-A React and Python/FastAPI workspace for PDF/CAD conversion and reviewable P&ID digitization. Configure your own VLM, LLM, and CAD MCP connection. Run locally on Windows or deploy the web service with a separate Windows CAD workstation.
+A **human-supervised agentic AI application** for P&ID digitization and PDF/CAD conversion, built with React and Python/FastAPI. An orchestrator coordinates specialist vision, reasoning, verification, and CAD roles over shared evidence. Configure your own VLM, LLM, and CAD MCP connection, then run locally on Windows or deploy the web service with a separate Windows CAD workstation.
 
 **Beta status:** software workflows and offline DXF output have been exercised with synthetic fixtures and recorded model responses. Real recognition accuracy and licensed AutoCAD/SOLIDWORKS generation require acceptance testing with your models, drawings, and software versions. Connection success does not establish engineering accuracy.
 
@@ -14,6 +14,78 @@ A React and Python/FastAPI workspace for PDF/CAD conversion and reviewable P&ID 
 - **Traceability:** reviewed snapshots, source IDs, tags CSV, review reports, CAD comparisons, and transmission audit hashes.
 
 [Full technical diagram](docs/diagrams/lineaforge-technical-ecosystem.png) · [Editable SVG](docs/diagrams/lineaforge-technical-ecosystem.svg) · [Beta overview](docs/diagrams/lineaforge-linkedin-beta-1200x1500.png)
+
+## Agentic workflow
+
+The Python orchestrator schedules specialist tasks in dependency order. Vision roles interpret drawings; language roles review structured graph evidence and CAD readiness. Each model response passes a JSON/Pydantic contract before entering the shared graph. Source IDs, image crops, findings, and human decisions remain traceable through CAD delivery.
+
+```mermaid
+flowchart TD
+    input["Upload a drawing / select a PDF page"] --> app["React workbench + FastAPI jobs"]
+    app --> orchestrator["Python job orchestrator<br/>Dependencies, budgets and retries"]
+
+    subgraph analysis["Agentic P&ID analysis"]
+        orchestrator --> understand["Intake, layout and legend agents"]
+        understand --> prepare["Overlapping tiles and noise analysis<br/>Independent content preservation"]
+        prepare --> extract["Equipment, valves and instruments<br/>Inline items, tags, line numbers and notes"]
+        extract --> connect["Piping, signals, connectivity and off-page agents"]
+        connect --> pidgraph["Python process graph builder<br/>Coordinates, deduplication and references"]
+        pidgraph --> verify["LLM graph reviewers<br/>Independent VLM visual verifier"]
+        verify --> planner["LLM CAD readiness planner"]
+        verify -. "Optional proposals" .-> repair["Evidence repair proposer<br/>Changes require human acceptance"]
+        repair --> planner
+    end
+
+    models["Model router<br/>Configured VLM + optional LLM"] -. "Vision calls" .-> understand
+    models -. "Reasoning and visual checks" .-> verify
+    pidgraph -. "Graph, crops, findings and logs" .-> evidence["Shared evidence / artifact store"]
+
+    planner --> review["Human graph review<br/>Accept, edit or reject; resolve findings"]
+    review --> snapshot["Immutable reviewed graph snapshot"]
+    snapshot --> builder["Deterministic CAD builder<br/>Validated typed command plan"]
+    builder --> offline["Offline DXF / ezdxf"]
+    builder --> mcp["MCP client<br/>Local stdio or authenticated HTTPS"]
+    mcp --> bridge["Windows CAD bridge"]
+    bridge --> autocad["AutoCAD COM"]
+    bridge --> solidworks["SOLIDWORKS COM<br/>2D drawing / sketch"]
+    offline --> qa["CAD QA: reopen, source IDs and counts<br/>Source / render comparison"]
+    autocad --> qa
+    solidworks --> qa
+    qa --> release["Human engineering release review"]
+    release --> output["Evidence reporter<br/>DXF / DWG, graph JSON, tags CSV and reports"]
+
+    classDef agent fill:#e7f5f4,stroke:#008784,color:#143d49
+    classDef human fill:#fff0d8,stroke:#c38d2c,color:#67470f
+    classDef tool fill:#eaf0fc,stroke:#456fba,color:#213d62
+    class understand,prepare,extract,connect,verify,planner,repair agent
+    class review,release human
+    class builder,offline,mcp,bridge,autocad,solidworks,qa tool
+```
+
+The analysis job prepares evidence for review. CAD generation is a separate job that consumes an immutable snapshot of the approved graph. Only the deterministic builder issues CAD commands. The software retains a human review status after CAD QA; comparisons do not automatically certify engineering fidelity. Independent DWG visual comparison requires a reviewed native plot or DXF export.
+
+### Specialist agent ecosystem
+
+| Stage | Roles | Execution |
+| --- | --- | --- |
+| Control — 1 | Job orchestrator | Python |
+| Understand — 3 | Intake classifier; global layout analyst; legend & standard expert | VLM |
+| Preserve — 2 | Noise analyst; content preservation verifier | VLM decisions + local image operations |
+| Extract — 7 | Equipment; valves; instrumentation; inline components; tag & text; line numbers; notes & tables | VLM |
+| Connect — 4 | Piping tracer; signal tracer; connectivity analyst; off-page & tie-in analyst | VLM |
+| Validate — 6 | Process graph builder; topology reviewer; tag & loop reviewer; piping consistency reviewer; independent visual verifier; optional evidence repair proposer | 1 Python + 3 LLM + 2 VLM |
+| Deliver — 5 | CAD build planner; MCP CAD builder; CAD render verifier; human release gate; evidence reporter | 1 LLM + 1 VLM + 3 Python; CAD QA also uses structural checks |
+
+**28 roles = 19 VLM + 4 LLM + 5 Python.** They share configured providers. The repair proposer is opt-in, leaving **27 roles enabled by default**. The current dependency batches allow up to four concurrent specialist calls. If no LLM model is configured, its reasoning roles fall back to the VLM.
+
+### Agent coordination and review
+
+- **Task handoffs:** overview conventions guide tile specialists; extracted elements give connectivity agents stable IDs; graph findings identify regions for fresh visual verification.
+- **Shared state:** schema-validated responses, cached evidence, source coordinates, graphs, event logs, and review decisions connect the stages.
+- **Bounded execution:** Python enforces call/time/estimated-cost budgets, cancellation, retries, required roles, and dependency ordering. Configure routing and prompts in Agent Studio.
+- **Evidence-based correction:** the repair role proposes changes for human review. Unreadable tags remain flagged; proposed repairs are never silently applied.
+- **Controlled tool use:** CAD commands are preflighted against the selected MCP tool schemas and output root. Native CAD runs on the licensed Windows host.
+- **Human approval:** review must resolve findings and classify elements as accepted or rejected, with at least one accepted element. Unreadable content needs correction or rejection before CAD submission; engineering release remains a human decision.
 
 ## Run on Windows
 
