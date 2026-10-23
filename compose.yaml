@@ -1,0 +1,13 @@
+services:
+  lineaforge:
+    build: .
+    ports:
+      - "127.0.0.1:8765:8765"
+    environment:
+      LINEAFORGE_API_TOKEN: ${LINEAFORGE_API_TOKEN:?Set a random API token of at least 24 characters in .env}
+      LINEAFORGE_ALLOWED_ORIGINS: ${LINEAFORGE_ALLOWED_ORIGINS:-}
+    volumes:
+      - lineaforge-data:/data
+    restart: unless-stopped
+volumes:
+  lineaforge-data:

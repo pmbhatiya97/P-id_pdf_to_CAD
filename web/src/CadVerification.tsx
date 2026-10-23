@@ -1,0 +1,7 @@
+import type {Job} from './api'
+type Report={reason?:string;structural?:{structural_traceability_pass?:boolean;missing_source_ids?:string[]};visual?:{compared_tiles?:number;comparisons?:{tile:number;discrepancies?:string[];needs_human?:boolean}[]}}
+export default function CadVerification({job}:{job:Job}){
+ const qa=job.result?.qa as Report|undefined;if(!qa)return null
+ const comparisons=qa.visual?.comparisons||[],findings=comparisons.flatMap(item=>(item.discrepancies||[]).map(reason=>({tile:item.tile,reason})))
+ return <section className="panel" style={{padding:20,marginTop:16}} aria-label="CAD verification findings"><h2>CAD verification findings</h2><p className="field-hint">{qa.reason}</p><p className="small">{qa.structural?.structural_traceability_pass===true?'Source IDs verified in the saved DXF.':'Source traceability needs review.'} {qa.visual?.compared_tiles||0} source/render tiles compared.</p>{qa.structural?.missing_source_ids?.length?<div className="notice warning">Missing source IDs: {qa.structural.missing_source_ids.join(', ')}</div>:null}{findings.length?<ul className="small">{findings.map((item,index)=><li key={index}><strong>Tile {item.tile+1}:</strong> {item.reason}</li>)}</ul>:<p className="field-hint">No model discrepancies were listed. This is not an engineering fidelity certificate.</p>}<p className="field-hint">Compare the downloaded CAD render with the source. Correct the source graph and rebuild when needed; complete human CAD review before engineering use.</p></section>
+}

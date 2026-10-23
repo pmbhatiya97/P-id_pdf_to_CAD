@@ -1,0 +1,208 @@
+{
+  "$defs": {
+    "Edge": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "from_id": {
+          "title": "From Id",
+          "type": "string"
+        },
+        "to_id": {
+          "title": "To Id",
+          "type": "string"
+        },
+        "kind": {
+          "default": "pipe",
+          "enum": [
+            "pipe",
+            "signal"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "line_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line Number"
+        },
+        "attributes": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Attributes",
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "from_id",
+        "to_id"
+      ],
+      "title": "Edge",
+      "type": "object"
+    },
+    "Element": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "equipment",
+            "valve",
+            "instrument",
+            "pipe",
+            "signal",
+            "text",
+            "connector",
+            "junction",
+            "annotation"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "subclass": {
+          "default": "unknown",
+          "title": "Subclass",
+          "type": "string"
+        },
+        "tag": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tag"
+        },
+        "text": {
+          "default": "",
+          "title": "Text",
+          "type": "string"
+        },
+        "bbox": {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "title": "Bbox",
+          "type": "array"
+        },
+        "points": {
+          "items": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "title": "Points",
+          "type": "array"
+        },
+        "rotation": {
+          "default": 0,
+          "title": "Rotation",
+          "type": "number"
+        },
+        "parent_equipment": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parent Equipment"
+        },
+        "connected_to": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Connected To",
+          "type": "array"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "tile_id": {
+          "title": "Tile Id",
+          "type": "string"
+        },
+        "source_agent": {
+          "title": "Source Agent",
+          "type": "string"
+        },
+        "status": {
+          "default": "EXTRACTED",
+          "enum": [
+            "EXTRACTED",
+            "UNREADABLE",
+            "LOW_CONFIDENCE",
+            "ACCEPTED",
+            "REJECTED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "attributes": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Attributes",
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "bbox",
+        "confidence",
+        "tile_id",
+        "source_agent"
+      ],
+      "title": "Element",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "elements": {
+      "items": {
+        "$ref": "#/$defs/Element"
+      },
+      "title": "Elements",
+      "type": "array"
+    },
+    "edges": {
+      "items": {
+        "$ref": "#/$defs/Edge"
+      },
+      "title": "Edges",
+      "type": "array"
+    }
+  },
+  "title": "Extraction",
+  "type": "object"
+}

@@ -1,0 +1,80 @@
+{
+  "$defs": {
+    "NoiseRegion": {
+      "additionalProperties": false,
+      "properties": {
+        "bbox": {
+          "items": {
+            "type": "integer"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "title": "Bbox",
+          "type": "array"
+        },
+        "label": {
+          "enum": [
+            "speckle",
+            "stain",
+            "shadow",
+            "streak",
+            "border",
+            "bleed_through",
+            "punch_hole",
+            "markup",
+            "watermark"
+          ],
+          "title": "Label",
+          "type": "string"
+        },
+        "action": {
+          "enum": [
+            "remove",
+            "keep",
+            "separate_layer"
+          ],
+          "title": "Action",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "bbox",
+        "label",
+        "action",
+        "reason"
+      ],
+      "title": "NoiseRegion",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "regions": {
+      "items": {
+        "$ref": "#/$defs/NoiseRegion"
+      },
+      "title": "Regions",
+      "type": "array"
+    },
+    "deskew_degrees": {
+      "default": 0,
+      "maximum": 10,
+      "minimum": -10,
+      "title": "Deskew Degrees",
+      "type": "number"
+    },
+    "rationale": {
+      "title": "Rationale",
+      "type": "string"
+    }
+  },
+  "required": [
+    "rationale"
+  ],
+  "title": "DenoisePlan",
+  "type": "object"
+}

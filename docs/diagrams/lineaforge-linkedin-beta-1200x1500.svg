@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+<title id="title">LineaForge Studio Beta — P&amp;ID agent ecosystem</title><desc id="desc">Social post graphic showing all 28 specialist roles, configured models, reviewed graph workflow and offline DXF or MCP native CAD connections.</desc>
+<defs><linearGradient id="hero" x2="1" y2="1"><stop stop-color="#0A223F"/><stop offset="1" stop-color="#0C4D60"/></linearGradient></defs>
+<style>text{font-family:"Segoe UI",Arial,sans-serif}</style>
+<rect x="0" y="0" width="1200" height="1500" rx="0" fill="#F3F7FA" stroke="none"/>
+<rect x="0" y="0" width="1200" height="204" rx="0" fill="url(#hero)" stroke="none"/>
+<rect x="990" y="42" width="162" height="43" rx="22" fill="#D9F7EA" stroke="none"/>
+<text x="1071" y="71" font-size="18" fill="#075A4D" font-weight="750" text-anchor="middle">BETA VERSION</text>
+<text x="48" y="91" font-size="53" fill="#FFFFFF" font-weight="750" >LineaForge Studio</text>
+<text x="48" y="144" font-size="33" fill="#FFFFFF" font-weight="600" >The P&amp;ID AI ecosystem</text>
+<text x="48" y="180" font-size="23" fill="#C5E5ED" font-weight="400" >28 specialist roles. Configurable models. Human-reviewed CAD.</text>
+<rect x="48" y="226" width="1104" height="74" rx="14" fill="#E7F0FA" stroke="#D3E1EF"/>
+<text x="70" y="256" font-size="24" fill="#1C466A" font-weight="750" >REACT WORKBENCH  →  PYTHON / FASTAPI</text>
+<text x="70" y="284" font-size="21" fill="#43647E" font-weight="400" >P&amp;ID Studio • Agent Studio • Model configuration • Jobs • Shared evidence</text>
+<rect x="48" y="316" width="1104" height="50" rx="14" fill="#DDF2EE" stroke="#B7DCD5"/>
+<text x="70" y="349" font-size="24" fill="#075D5C" font-weight="750" >01  Job orchestrator</text>
+<text x="426" y="349" font-size="22" fill="#245D63" font-weight="400" >Python • Dependencies • Budgets • Up to 4 parallel calls</text>
+<rect x="48" y="386" width="540" height="180" rx="16" fill="#FFFFFF" stroke="#D5E2EC"/>
+<rect x="48" y="386" width="7" height="180" rx="3" fill="#008B89" stroke="none"/>
+<text x="70" y="420" font-size="23" fill="#0A4057" font-weight="750" >UNDERSTAND</text>
+<text x="562" y="420" font-size="23" fill="#008784" font-weight="750" text-anchor="end">3</text>
+<text x="70" y="457" font-size="20" fill="#668097" font-weight="600" >02</text>
+<text x="109" y="457" font-size="22" fill="#1C344E" font-weight="550" >Intake classifier</text>
+<rect x="516" y="437" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="533.5" y="457" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="70" y="485" font-size="20" fill="#668097" font-weight="600" >03</text>
+<text x="109" y="485" font-size="22" fill="#1C344E" font-weight="550" >Global layout analyst</text>
+<rect x="516" y="465" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="533.5" y="485" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="70" y="513" font-size="20" fill="#668097" font-weight="600" >04</text>
+<text x="109" y="513" font-size="22" fill="#1C344E" font-weight="550" >Legend &amp; standard expert</text>
+<rect x="516" y="493" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="533.5" y="513" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="70" y="548" font-size="18" fill="#688093" font-weight="400" >Full-sheet overview, layout and visible conventions</text>
+<rect x="612" y="386" width="540" height="180" rx="16" fill="#FFFFFF" stroke="#D5E2EC"/>
+<rect x="612" y="386" width="7" height="180" rx="3" fill="#008B89" stroke="none"/>
+<text x="634" y="420" font-size="23" fill="#0A4057" font-weight="750" >CLEAN &amp; PRESERVE</text>
+<text x="1126" y="420" font-size="23" fill="#008784" font-weight="750" text-anchor="end">2</text>
+<text x="634" y="457" font-size="20" fill="#668097" font-weight="600" >05</text>
+<text x="673" y="457" font-size="22" fill="#1C344E" font-weight="550" >Noise analyst</text>
+<rect x="1080" y="437" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="1097.5" y="457" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="634" y="485" font-size="20" fill="#668097" font-weight="600" >06</text>
+<text x="673" y="485" font-size="22" fill="#1C344E" font-weight="550" >Content preservation verifier</text>
+<rect x="1080" y="465" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="1097.5" y="485" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="634" y="548" font-size="18" fill="#688093" font-weight="400" >Tiled evidence • Mask checks • Preserve source content</text>
+<rect x="48" y="584" width="540" height="270" rx="16" fill="#FFFFFF" stroke="#D5E2EC"/>
+<rect x="48" y="584" width="7" height="270" rx="3" fill="#008B89" stroke="none"/>
+<text x="70" y="618" font-size="23" fill="#0A4057" font-weight="750" >EXTRACT SYMBOLS &amp; TEXT</text>
+<text x="562" y="618" font-size="23" fill="#008784" font-weight="750" text-anchor="end">7</text>
+<text x="70" y="655" font-size="20" fill="#668097" font-weight="600" >07</text>
+<text x="109" y="655" font-size="22" fill="#1C344E" font-weight="550" >Equipment specialist</text>
+<rect x="516" y="635" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="533.5" y="655" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="70" y="683" font-size="20" fill="#668097" font-weight="600" >08</text>
+<text x="109" y="683" font-size="22" fill="#1C344E" font-weight="550" >Valve specialist</text>
+<rect x="516" y="663" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="533.5" y="683" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="70" y="711" font-size="20" fill="#668097" font-weight="600" >09</text>
+<text x="109" y="711" font-size="22" fill="#1C344E" font-weight="550" >Instrumentation specialist</text>
+<rect x="516" y="691" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="533.5" y="711" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="70" y="739" font-size="20" fill="#668097" font-weight="600" >10</text>
+<text x="109" y="739" font-size="22" fill="#1C344E" font-weight="550" >Inline component specialist</text>
+<rect x="516" y="719" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="533.5" y="739" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="70" y="767" font-size="20" fill="#668097" font-weight="600" >11</text>
+<text x="109" y="767" font-size="22" fill="#1C344E" font-weight="550" >Tag &amp; text reader</text>
+<rect x="516" y="747" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="533.5" y="767" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="70" y="795" font-size="20" fill="#668097" font-weight="600" >12</text>
+<text x="109" y="795" font-size="22" fill="#1C344E" font-weight="550" >Line number reader</text>
+<rect x="516" y="775" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="533.5" y="795" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="70" y="823" font-size="20" fill="#668097" font-weight="600" >13</text>
+<text x="109" y="823" font-size="22" fill="#1C344E" font-weight="550" >Notes &amp; table reader</text>
+<rect x="516" y="803" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="533.5" y="823" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<rect x="612" y="584" width="540" height="270" rx="16" fill="#FFFFFF" stroke="#D5E2EC"/>
+<rect x="612" y="584" width="7" height="270" rx="3" fill="#008B89" stroke="none"/>
+<text x="634" y="618" font-size="23" fill="#0A4057" font-weight="750" >TRACE CONNECTIONS</text>
+<text x="1126" y="618" font-size="23" fill="#008784" font-weight="750" text-anchor="end">4</text>
+<text x="634" y="655" font-size="20" fill="#668097" font-weight="600" >14</text>
+<text x="673" y="655" font-size="22" fill="#1C344E" font-weight="550" >Piping tracer</text>
+<rect x="1080" y="635" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="1097.5" y="655" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="634" y="683" font-size="20" fill="#668097" font-weight="600" >15</text>
+<text x="673" y="683" font-size="22" fill="#1C344E" font-weight="550" >Signal tracer</text>
+<rect x="1080" y="663" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="1097.5" y="683" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="634" y="711" font-size="20" fill="#668097" font-weight="600" >16</text>
+<text x="673" y="711" font-size="22" fill="#1C344E" font-weight="550" >Connectivity analyst</text>
+<rect x="1080" y="691" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="1097.5" y="711" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="634" y="739" font-size="20" fill="#668097" font-weight="600" >17</text>
+<text x="673" y="739" font-size="22" fill="#1C344E" font-weight="550" >Off-page &amp; tie-in analyst</text>
+<rect x="1080" y="719" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="1097.5" y="739" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="634" y="836" font-size="18" fill="#688093" font-weight="400" >Explicit routes and references; uncertainty stays visible</text>
+<rect x="48" y="872" width="540" height="238" rx="16" fill="#FFFFFF" stroke="#D5E2EC"/>
+<rect x="48" y="872" width="7" height="238" rx="3" fill="#008B89" stroke="none"/>
+<text x="70" y="906" font-size="23" fill="#0A4057" font-weight="750" >VALIDATE THE GRAPH</text>
+<text x="562" y="906" font-size="23" fill="#008784" font-weight="750" text-anchor="end">6</text>
+<text x="70" y="943" font-size="20" fill="#668097" font-weight="600" >18</text>
+<text x="109" y="943" font-size="22" fill="#1C344E" font-weight="550" >Process graph builder</text>
+<rect x="516" y="923" width="35" height="27" rx="7" fill="#E3ECFC" stroke="none"/>
+<text x="533.5" y="943" font-size="18" fill="#285A9D" font-weight="750" text-anchor="middle">P</text>
+<text x="70" y="971" font-size="20" fill="#668097" font-weight="600" >19</text>
+<text x="109" y="971" font-size="22" fill="#1C344E" font-weight="550" >Topology reviewer</text>
+<rect x="516" y="951" width="35" height="27" rx="7" fill="#EEE7FF" stroke="none"/>
+<text x="533.5" y="971" font-size="18" fill="#6845B5" font-weight="750" text-anchor="middle">L</text>
+<text x="70" y="999" font-size="20" fill="#668097" font-weight="600" >20</text>
+<text x="109" y="999" font-size="22" fill="#1C344E" font-weight="550" >Tag &amp; loop reviewer</text>
+<rect x="516" y="979" width="35" height="27" rx="7" fill="#EEE7FF" stroke="none"/>
+<text x="533.5" y="999" font-size="18" fill="#6845B5" font-weight="750" text-anchor="middle">L</text>
+<text x="70" y="1027" font-size="20" fill="#668097" font-weight="600" >21</text>
+<text x="109" y="1027" font-size="22" fill="#1C344E" font-weight="550" >Piping consistency reviewer</text>
+<rect x="516" y="1007" width="35" height="27" rx="7" fill="#EEE7FF" stroke="none"/>
+<text x="533.5" y="1027" font-size="18" fill="#6845B5" font-weight="750" text-anchor="middle">L</text>
+<text x="70" y="1055" font-size="20" fill="#668097" font-weight="600" >22</text>
+<text x="109" y="1055" font-size="22" fill="#1C344E" font-weight="550" >Independent visual verifier</text>
+<rect x="516" y="1035" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="533.5" y="1055" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="70" y="1083" font-size="20" fill="#668097" font-weight="600" >23</text>
+<text x="109" y="1083" font-size="22" fill="#1C344E" font-weight="550" >Evidence repair proposer*</text>
+<rect x="516" y="1063" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="533.5" y="1083" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<rect x="612" y="872" width="540" height="238" rx="16" fill="#FFFFFF" stroke="#D5E2EC"/>
+<rect x="612" y="872" width="7" height="238" rx="3" fill="#008B89" stroke="none"/>
+<text x="634" y="906" font-size="23" fill="#0A4057" font-weight="750" >PLAN, BUILD &amp; VERIFY</text>
+<text x="1126" y="906" font-size="23" fill="#008784" font-weight="750" text-anchor="end">5</text>
+<text x="634" y="943" font-size="20" fill="#668097" font-weight="600" >24</text>
+<text x="673" y="943" font-size="22" fill="#1C344E" font-weight="550" >CAD build planner</text>
+<rect x="1080" y="923" width="35" height="27" rx="7" fill="#EEE7FF" stroke="none"/>
+<text x="1097.5" y="943" font-size="18" fill="#6845B5" font-weight="750" text-anchor="middle">L</text>
+<text x="634" y="971" font-size="20" fill="#668097" font-weight="600" >25</text>
+<text x="673" y="971" font-size="22" fill="#1C344E" font-weight="550" >MCP CAD builder</text>
+<rect x="1080" y="951" width="35" height="27" rx="7" fill="#E3ECFC" stroke="none"/>
+<text x="1097.5" y="971" font-size="18" fill="#285A9D" font-weight="750" text-anchor="middle">P</text>
+<text x="634" y="999" font-size="20" fill="#668097" font-weight="600" >26</text>
+<text x="673" y="999" font-size="22" fill="#1C344E" font-weight="550" >CAD render verifier</text>
+<rect x="1080" y="979" width="35" height="27" rx="7" fill="#E1F6F4" stroke="none"/>
+<text x="1097.5" y="999" font-size="18" fill="#007C79" font-weight="750" text-anchor="middle">V</text>
+<text x="634" y="1027" font-size="20" fill="#668097" font-weight="600" >27</text>
+<text x="673" y="1027" font-size="22" fill="#1C344E" font-weight="550" >Human release gate</text>
+<rect x="1080" y="1007" width="35" height="27" rx="7" fill="#E3ECFC" stroke="none"/>
+<text x="1097.5" y="1027" font-size="18" fill="#285A9D" font-weight="750" text-anchor="middle">P</text>
+<text x="634" y="1055" font-size="20" fill="#668097" font-weight="600" >28</text>
+<text x="673" y="1055" font-size="22" fill="#1C344E" font-weight="550" >Evidence reporter</text>
+<rect x="1080" y="1035" width="35" height="27" rx="7" fill="#E3ECFC" stroke="none"/>
+<text x="1097.5" y="1055" font-size="18" fill="#285A9D" font-weight="750" text-anchor="middle">P</text>
+<text x="634" y="1092" font-size="18" fill="#688093" font-weight="400" >CAD QA combines Python checks with VLM comparison</text>
+<text x="48" y="1147" font-size="21" fill="#007C79" font-weight="650" >V  VLM: 19 vision roles</text>
+<text x="416" y="1147" font-size="21" fill="#6845B5" font-weight="650" >L  LLM: 4 reasoning roles</text>
+<text x="815" y="1147" font-size="21" fill="#285A9D" font-weight="650" >P  Python: 5 control roles</text>
+<text x="48" y="1176" font-size="18" fill="#667F93" font-weight="400" >*Repair is opt-in. 27 roles enabled by default. External data transfer requires consent.</text>
+<rect x="48" y="1198" width="1104" height="62" rx="14" fill="#FFF0D8" stroke="#EAD2A3"/>
+<text x="600" y="1236" font-size="23" fill="#765018" font-weight="650" text-anchor="middle">Human review  →  Reviewed graph  →  CAD build  →  QA  →  Release review</text>
+<rect x="48" y="1280" width="1104" height="91" rx="14" fill="#FFFFFF" stroke="#CEDFE9"/>
+<text x="70" y="1314" font-size="21" fill="#0B5264" font-weight="750" >CAD BACKENDS</text>
+<text x="286" y="1314" font-size="23" fill="#244A65" font-weight="600" >Offline DXF (ezdxf)  OR  MCP client → Windows CAD bridge</text>
+<text x="70" y="1349" font-size="21" fill="#43647E" font-weight="400" >AutoCAD / SOLIDWORKS 2D • Local stdio / authenticated HTTPS • Editable DXF / DWG</text>
+<text x="48" y="1414" font-size="21" fill="#0B5264" font-weight="750" >BUILT WITH REACT + FASTAPI</text>
+<text x="48" y="1451" font-size="21" fill="#536F85" font-weight="400" >Windows local • Server deployment • Model accuracy requires validation</text>
+<rect x="1018" y="1394" width="134" height="62" rx="10" fill="#DDF2EE" stroke="none"/>
+<text x="1085" y="1421" font-size="23" fill="#076B69" font-weight="750" text-anchor="middle">P&amp;ID AI</text>
+<text x="1085" y="1444" font-size="17" fill="#076B69" font-weight="650" text-anchor="middle">IN BETA</text>
+</svg>

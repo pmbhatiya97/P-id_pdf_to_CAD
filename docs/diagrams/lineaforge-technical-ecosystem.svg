@@ -1,0 +1,415 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="5100" viewBox="0 0 2800 5100" role="img" aria-labelledby="title desc">
+<title id="title">LineaForge Studio — technical ecosystem and all 28 P&amp;ID agent roles</title>
+<desc id="desc">Editable technical architecture diagram. React calls FastAPI. One orchestrator coordinates the sequential P&amp;ID pipeline using configured VLM and LLM providers and shared evidence. Human-reviewed graph snapshots feed one deterministic CAD builder, which selects offline DXF or MCP and Windows native CAD. CAD QA and human release review precede final reporting. All 28 catalog roles are named with their execution kinds.</desc>
+<defs>
+ <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto-start-reverse"><path d="M0,0 L10,5.5 L0,11 Z" fill="#526D93"/></marker>
+ <marker id="service" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M0,0 L9,5 L0,10 Z" fill="#15919D"/></marker>
+ <style>
+ text {font-family: "Segoe UI", Arial, sans-serif; fill:#182B46}
+ .main-title{font-size:62px;font-weight:750;letter-spacing:-1px}
+ .subtitle{font-size:28px;fill:#536B88}
+ .section-title{font-size:31px;font-weight:700}
+ .stage-title{font-size:29px;font-weight:700}
+ .body{font-size:25px;fill:#405977}
+ .small{font-size:22px;fill:#526B86}
+ .tiny{font-size:20px;fill:#526B86}
+ .role-title{font-size:25px;font-weight:650}
+ .role-id{font-size:22px;font-weight:750;fill:#48617F}
+ .badge{font-size:18px;font-weight:750;letter-spacing:1px}
+ .control{fill:none;stroke:#526D93;stroke-width:4;marker-end:url(#arrow)}
+ .service-line{fill:none;stroke:#15919D;stroke-width:3;stroke-dasharray:9 8;marker-start:url(#service);marker-end:url(#service)}
+ .frame{fill:white;stroke:#CDD8E7;stroke-width:2}
+ .stage{fill:#FDFEFF;stroke:#CCD9E8;stroke-width:2}
+ .card{fill:white;stroke:#D5DFEB;stroke-width:1.5}
+ </style>
+</defs>
+<rect width="2800" height="5100" fill="#F3F6FB"/>
+<rect width="2800" height="12" fill="#1C6078"/>
+<text x="80" y="95" class="main-title" >LineaForge Studio</text>
+<text x="80" y="143" class="subtitle" >Full technical ecosystem · all 28 P&amp;ID roles · configured models · reviewed CAD execution</text>
+<text x="2720" y="93" class="small" text-anchor="end">ARCHITECTURE / v0.2.0</text>
+<text x="2720" y="137" class="small" text-anchor="end">Technical source of truth: implemented pipeline</text>
+<rect x="80" y="210" width="2640" height="160" rx="18" fill="#E9F0FB" stroke="#C8D7EB" stroke-width="2"/>
+<text x="110" y="257" class="section-title" >REACT + TYPESCRIPT WORKBENCH</text>
+<text x="110" y="304" class="body" >P&amp;ID Studio   •   Agent Studio   •   Connections   •   Drawing Converter   •   PDF Tools   •   Workspace / Settings</text>
+<text x="110" y="344" class="small" >Source viewer, detection overlay, review queue, geometry editor, agent timeline, noise evidence, CAD QA findings</text>
+<path class="control" d="M960,370 L960,420"/>
+<rect x="80" y="420" width="2640" height="170" rx="18" fill="#EAF5F6" stroke="#C6DFE2" stroke-width="2"/>
+<text x="110" y="466" class="section-title" >PYTHON / FASTAPI APPLICATION</text>
+<text x="110" y="511" class="body" >Upload &amp; preview API   •   Persistent job queue   •   Progress / cancellation / retry   •   Graph review transactions</text>
+<text x="110" y="551" class="body" >Configuration &amp; secret redaction   •   Model routing   •   CAD backend selection   •   Evidence / artifact downloads</text>
+<path class="control" d="M960,590 L960,660"/>
+<rect x="80" y="660" width="1760" height="135" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="97" y="689" class="role-id" >01</text>
+<rect x="1716" y="672" width="112" height="30" rx="8" fill="#E9F0FF" stroke="#E9F0FF" stroke-width="2"/>
+<text x="1772" y="693" class="badge" text-anchor="middle" fill="#2C5CB0" style="fill:#2C5CB0">PYTHON</text>
+<text x="137" y="691" class="role-title" >Job orchestrator</text>
+<text x="98" y="751" class="tiny" >Coordinates dependency stages, model budgets, bounded retries, cache, cancellation and event logs.</text>
+<text x="98" y="777" class="tiny" >Default: up to 4 concurrent specialist calls; 27 roles enabled. Role 23 is optional.</text>
+<path class="control" d="M960,795 L960,850"/>
+<rect x="80" y="850" width="1760" height="250" rx="18" fill="#FFFFFF" stroke="#CDD8E7" stroke-width="2"/>
+<rect x="80" y="850" width="8" height="250" rx="4" fill="#177A89"/>
+<text x="106" y="894" class="stage-title" >A · WHOLE-SHEET UNDERSTANDING</text>
+<text x="106" y="928" class="small" >One selected PDF page → full-sheet overview; visible source conventions control interpretation</text>
+<rect x="106" y="947" width="552" height="128" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="123" y="976" class="role-id" >02</text>
+<rect x="534" y="959" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="590" y="980" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="163" y="978" class="role-title" >Intake classifier</text>
+<text x="124" y="1057" class="tiny" >Classify page; route P&amp;ID or explicitly skip.</text>
+<rect x="684" y="947" width="552" height="128" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="701" y="976" class="role-id" >03</text>
+<rect x="1112" y="959" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="1168" y="980" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="741" y="978" class="role-title" >Global layout</text>
+<text x="741" y="1008" class="role-title" >analyst</text>
+<text x="702" y="1057" class="tiny" >Drawing, legend, tables, notes, title/revisions.</text>
+<rect x="1262" y="947" width="552" height="128" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="1279" y="976" class="role-id" >04</text>
+<rect x="1690" y="959" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="1746" y="980" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="1319" y="978" class="role-title" >Legend &amp; standard</text>
+<text x="1319" y="1008" class="role-title" >expert</text>
+<text x="1280" y="1057" class="tiny" >Actual sheet rules; local reference catalog.</text>
+<path class="control" d="M960,1100 L960,1150"/>
+<rect x="80" y="1150" width="1760" height="105" rx="18" fill="#EFF5FF" stroke="#CCD9EB" stroke-width="2"/>
+<text x="106" y="1192" class="stage-title" >PYTHON RASTERIZATION + OVERLAPPING TILE PLAN</text>
+<text x="106" y="1230" class="small" >300–600 DPI · pixel-exact tile origins · overview context retained · each page handled as one analysis job</text>
+<path class="control" d="M960,1255 L960,1305"/>
+<rect x="80" y="1305" width="1760" height="250" rx="18" fill="#FFFFFF" stroke="#CDD8E7" stroke-width="2"/>
+<rect x="80" y="1305" width="8" height="250" rx="4" fill="#177A89"/>
+<text x="106" y="1349" class="stage-title" >B · NOISE PRESERVATION</text>
+<text x="106" y="1383" class="small" >Each detail tile passes local masking and preservation checks before extraction</text>
+<rect x="106" y="1402" width="841" height="128" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="123" y="1431" class="role-id" >05</text>
+<rect x="823" y="1414" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="879" y="1435" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="163" y="1433" class="role-title" >Noise analyst</text>
+<text x="124" y="1512" class="tiny" >Proposes removal rectangles for confirmed acquisition noise.</text>
+<rect x="973" y="1402" width="841" height="128" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="990" y="1431" class="role-id" >06</text>
+<rect x="1690" y="1414" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="1746" y="1435" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="1030" y="1433" class="role-title" >Content preservation</text>
+<text x="1030" y="1463" class="role-title" >verifier</text>
+<text x="991" y="1512" class="tiny" >Independent content-loss check; retain/restore source on failure.</text>
+<path class="control" d="M960,1555 L960,1605"/>
+<rect x="80" y="1605" width="1760" height="450" rx="18" fill="#FFFFFF" stroke="#CDD8E7" stroke-width="2"/>
+<rect x="80" y="1605" width="8" height="450" rx="4" fill="#177A89"/>
+<text x="106" y="1649" class="stage-title" >C · COMPONENT + TEXT EXTRACTION</text>
+<text x="106" y="1683" class="small" >Ordered batches share canonical evidence; specialists preserve literal geometry and unreadable text</text>
+<text x="106" y="1710" class="tiny" >BATCH 1 · COMPONENTS</text>
+<rect x="106" y="1729" width="407" height="126" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="123" y="1758" class="role-id" >07</text>
+<rect x="389" y="1741" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="445" y="1762" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="163" y="1760" class="role-title" >Equipment</text>
+<text x="163" y="1790" class="role-title" >specialist</text>
+<text x="124" y="1837" class="tiny" >Vessels, rotating equipment, packages.</text>
+<rect x="539" y="1729" width="407" height="126" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="556" y="1758" class="role-id" >08</text>
+<rect x="822" y="1741" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="878" y="1762" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="596" y="1760" class="role-title" >Valve</text>
+<text x="596" y="1790" class="role-title" >specialist</text>
+<text x="557" y="1837" class="tiny" >Type, actuator, state, safety devices.</text>
+<rect x="972" y="1729" width="407" height="126" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="989" y="1758" class="role-id" >09</text>
+<rect x="1255" y="1741" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="1311" y="1762" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="1029" y="1760" class="role-title" >Instrumentation</text>
+<text x="1029" y="1790" class="role-title" >specialist</text>
+<text x="990" y="1837" class="tiny" >Bubbles, functions, loops, alarms.</text>
+<rect x="1405" y="1729" width="407" height="126" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="1422" y="1758" class="role-id" >10</text>
+<rect x="1688" y="1741" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="1744" y="1762" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="1462" y="1760" class="role-title" >Inline component</text>
+<text x="1462" y="1790" class="role-title" >specialist</text>
+<text x="1423" y="1837" class="tiny" >Reducers, flanges, vents, strainers.</text>
+<text x="106" y="1902" class="tiny" >BATCH 2 · LITERAL TEXT / SOURCE ANNOTATIONS</text>
+<rect x="106" y="1920" width="552" height="110" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="123" y="1949" class="role-id" >11</text>
+<rect x="534" y="1932" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="590" y="1953" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="163" y="1951" class="role-title" >Tag &amp; text reader</text>
+<text x="124" y="2012" class="tiny" >Rotated/stacked tags; no guessed characters.</text>
+<rect x="684" y="1920" width="552" height="110" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="701" y="1949" class="role-id" >12</text>
+<rect x="1112" y="1932" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="1168" y="1953" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="741" y="1951" class="role-title" >Line number reader</text>
+<text x="702" y="2012" class="tiny" >Visible size, service, run and spec fields.</text>
+<rect x="1262" y="1920" width="552" height="110" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="1279" y="1949" class="role-id" >13</text>
+<rect x="1690" y="1932" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="1746" y="1953" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="1319" y="1951" class="role-title" >Notes &amp; table</text>
+<text x="1319" y="1981" class="role-title" >reader</text>
+<text x="1280" y="2012" class="tiny" >Notes, title/revisions and equipment lists.</text>
+<path class="control" d="M960,2055 L960,2105"/>
+<rect x="80" y="2105" width="1760" height="290" rx="18" fill="#FFFFFF" stroke="#CDD8E7" stroke-width="2"/>
+<rect x="80" y="2105" width="8" height="290" rx="4" fill="#177A89"/>
+<text x="106" y="2149" class="stage-title" >D · ROUTES + EXPLICIT CONNECTIVITY</text>
+<text x="106" y="2183" class="small" >Piping/signals are traced before connectivity/off-page analysis; crossings remain distinct from junctions</text>
+<rect x="106" y="2204" width="841" height="72" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="123" y="2233" class="role-id" >14</text>
+<rect x="823" y="2216" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="879" y="2237" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="163" y="2235" class="role-title" >Piping tracer</text>
+<rect x="973" y="2204" width="841" height="72" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="990" y="2233" class="role-id" >15</text>
+<rect x="1690" y="2216" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="1746" y="2237" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="1030" y="2235" class="role-title" >Signal tracer</text>
+<rect x="106" y="2300" width="841" height="72" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="123" y="2329" class="role-id" >16</text>
+<rect x="823" y="2312" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="879" y="2333" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="163" y="2331" class="role-title" >Connectivity analyst</text>
+<rect x="973" y="2300" width="841" height="72" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="990" y="2329" class="role-id" >17</text>
+<rect x="1690" y="2312" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="1746" y="2333" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="1030" y="2331" class="role-title" >Off-page &amp; tie-in analyst</text>
+<path class="control" d="M960,2395 L960,2445"/>
+<rect x="80" y="2445" width="1760" height="450" rx="18" fill="#FFFFFF" stroke="#CDD8E7" stroke-width="2"/>
+<rect x="80" y="2445" width="8" height="450" rx="4" fill="#177A89"/>
+<text x="106" y="2489" class="stage-title" >E · GRAPH CONSTRUCTION + INDEPENDENT VALIDATION</text>
+<text x="106" y="2523" class="small" >Source pixels → canonical graph → findings → fresh source evidence; findings never silently cleared</text>
+<rect x="106" y="2542" width="1708" height="80" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="123" y="2571" class="role-id" >18</text>
+<rect x="1690" y="2554" width="112" height="30" rx="8" fill="#E9F0FF" stroke="#E9F0FF" stroke-width="2"/>
+<text x="1746" y="2575" class="badge" text-anchor="middle" fill="#2C5CB0" style="fill:#2C5CB0">PYTHON</text>
+<text x="163" y="2573" class="role-title" >Process graph builder</text>
+<text x="124" y="2604" class="tiny" >Normalize coordinates, deduplicate overlap, resolve aliases, validate references/bounds and flag seams.</text>
+<rect x="106" y="2650" width="552" height="110" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="123" y="2679" class="role-id" >19</text>
+<rect x="534" y="2662" width="112" height="30" rx="8" fill="#EEE9FF" stroke="#EEE9FF" stroke-width="2"/>
+<text x="590" y="2683" class="badge" text-anchor="middle" fill="#6846B2" style="fill:#6846B2">LLM</text>
+<text x="163" y="2681" class="role-title" >Topology reviewer</text>
+<text x="124" y="2742" class="tiny" >Explicit edges and contradictions.</text>
+<rect x="684" y="2650" width="552" height="110" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="701" y="2679" class="role-id" >20</text>
+<rect x="1112" y="2662" width="112" height="30" rx="8" fill="#EEE9FF" stroke="#EEE9FF" stroke-width="2"/>
+<text x="1168" y="2683" class="badge" text-anchor="middle" fill="#6846B2" style="fill:#6846B2">LLM</text>
+<text x="741" y="2681" class="role-title" >Tag &amp; loop reviewer</text>
+<text x="702" y="2742" class="tiny" >Duplicate tags, loop membership, conventions.</text>
+<rect x="1262" y="2650" width="552" height="110" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="1279" y="2679" class="role-id" >21</text>
+<rect x="1690" y="2662" width="112" height="30" rx="8" fill="#EEE9FF" stroke="#EEE9FF" stroke-width="2"/>
+<text x="1746" y="2683" class="badge" text-anchor="middle" fill="#6846B2" style="fill:#6846B2">LLM</text>
+<text x="1319" y="2681" class="role-title" >Piping consistency</text>
+<text x="1319" y="2711" class="role-title" >reviewer</text>
+<text x="1280" y="2742" class="tiny" >Line/spec changes and flow evidence.</text>
+<rect x="106" y="2772" width="841" height="108" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="123" y="2801" class="role-id" >22</text>
+<rect x="823" y="2784" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="879" y="2805" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="163" y="2803" class="role-title" >Independent visual</text>
+<text x="163" y="2833" class="role-title" >verifier</text>
+<text x="124" y="2862" class="tiny" >Fresh 600-DPI crops of flagged elements.</text>
+<rect x="973" y="2772" width="841" height="108" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="990" y="2801" class="role-id" >23</text>
+<rect x="1690" y="2784" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="1746" y="2805" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="1030" y="2803" class="role-title" >Evidence repair proposer</text>
+<text x="991" y="2862" class="tiny" >OPTIONAL · bounded proposals for human approval.</text>
+<path class="control" d="M960,2895 L960,2945"/>
+<rect x="80" y="2945" width="1760" height="135" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="97" y="2974" class="role-id" >24</text>
+<rect x="1716" y="2957" width="112" height="30" rx="8" fill="#EEE9FF" stroke="#EEE9FF" stroke-width="2"/>
+<text x="1772" y="2978" class="badge" text-anchor="middle" fill="#6846B2" style="fill:#6846B2">LLM</text>
+<text x="137" y="2976" class="role-title" >CAD build planner</text>
+<text x="98" y="3036" class="tiny" >Checks literal geometry and layer readiness against extracted facts.</text>
+<text x="98" y="3062" class="tiny" >Missing geometry produces review findings, never invented generic process symbols.</text>
+<path class="control" d="M960,3080 L960,3130"/>
+<rect x="80" y="3130" width="1760" height="135" rx="18" fill="#FFF6E3" stroke="#E4C584" stroke-width="2"/>
+<rect x="1685" y="3145" width="125" height="30" rx="8" fill="#FFF0CF" stroke="#FFF0CF" stroke-width="2"/>
+<text x="1747.5" y="3166" class="badge" text-anchor="middle" fill="#936017" style="fill:#936017">HUMAN</text>
+<text x="106" y="3176" class="stage-title" >HUMAN REVIEW TRANSACTION</text>
+<text x="106" y="3217" class="body" >Accept / edit / reject evidence and geometry; resolve findings before CAD submission.</text>
+<text x="106" y="3250" class="small" >Unreadable data requires correction or rejection; at least one accepted element is required.</text>
+<path class="control" d="M960,3265 L960,3315"/>
+<rect x="80" y="3315" width="1760" height="85" rx="18" fill="#EFF5FF" stroke="#CCD9EB" stroke-width="2"/>
+<text x="106" y="3350" class="stage-title" >IMMUTABLE REVIEWED GRAPH SNAPSHOT</text>
+<text x="106" y="3382" class="small" >Geometry, tags, connections, review decisions and source IDs are fixed for this build job.</text>
+<path class="control" d="M960,3400 L960,3450"/>
+<rect x="80" y="3450" width="1760" height="135" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="97" y="3479" class="role-id" >25</text>
+<rect x="1716" y="3462" width="112" height="30" rx="8" fill="#E9F0FF" stroke="#E9F0FF" stroke-width="2"/>
+<text x="1772" y="3483" class="badge" text-anchor="middle" fill="#2C5CB0" style="fill:#2C5CB0">PYTHON</text>
+<text x="137" y="3481" class="role-title" >MCP CAD builder</text>
+<text x="98" y="3541" class="tiny" >Creates and preflights one typed command plan from reviewed geometry; selects exactly one backend.</text>
+<text x="98" y="3567" class="tiny" >One controlled CAD writer; specialist models do not issue competing native CAD edits.</text>
+<path class="control" d="M960,3585 L960,3610 L513,3610 L513,3635"/><path class="control" d="M960,3610 L1406,3610 L1406,3635"/>
+<rect x="80" y="3635" width="867" height="390" rx="18" fill="#EEF6FF" stroke="#C6D8EC" stroke-width="2"/>
+<text x="108" y="3683" class="stage-title" >CAD ROUTE A · OFFLINE DXF</text>
+<text x="108" y="3731" class="body" >Reviewed command plan</text>
+<path class="control" d="M513,3750 L513,3784"/>
+<text x="108" y="3826" class="body" >ezdxf backend · editable entities / blocks</text>
+<path class="control" d="M513,3845 L513,3879"/>
+<text x="108" y="3921" class="body" >Save and reopen .dxf</text>
+<text x="108" y="3978" class="small" >Runs without a desktop CAD installation.</text>
+<rect x="973" y="3635" width="867" height="390" rx="18" fill="#ECF6F3" stroke="#C6DFD5" stroke-width="2"/>
+<text x="1001" y="3683" class="stage-title" >CAD ROUTE B · NATIVE CAD / MCP</text>
+<text x="1001" y="3727" class="body" >MCP client · stdio or authenticated HTTPS</text>
+<path class="control" d="M1406,3745 L1406,3776"/>
+<text x="1001" y="3815" class="body" >Windows MCP bridge → dedicated COM thread</text>
+<path class="control" d="M1406,3837 L1406,3850 L1190,3850 L1190,3870"/><path class="control" d="M1406,3850 L1625,3850 L1625,3870"/>
+<rect x="1001" y="3870" width="385" height="94" rx="11" fill="#FFFFFF" stroke="#C6DFD5" stroke-width="2"/>
+<text x="1023" y="3907" class="role-title" >AutoCAD COM</text>
+<text x="1023" y="3942" class="small" >DWG / DXF + blocks</text>
+<rect x="1412" y="3870" width="400" height="94" rx="11" fill="#FFFFFF" stroke="#C6DFD5" stroke-width="2"/>
+<text x="1433" y="3907" class="role-title" >SOLIDWORKS COM</text>
+<text x="1433" y="3942" class="small" >2D drawing → DWG / DXF</text>
+<text x="1001" y="4001" class="small" >Licensed, logged-in Windows workstation required.</text>
+<path class="control" d="M513,4025 L513,4050 L960,4050 L960,4075"/><path class="control" d="M1406,4025 L1406,4050 L960,4050"/>
+<rect x="80" y="4075" width="1760" height="205" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="97" y="4104" class="role-id" >26</text>
+<rect x="1716" y="4087" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="1772" y="4108" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="137" y="4106" class="role-title" >CAD render verifier</text>
+<text x="98" y="4210" class="tiny" >PYTHON: reopen / enumerate / structural source-ID checks; DXF render in original page coordinates.</text>
+<text x="98" y="4236" class="tiny" >VLM: compare cleaned-source tiles with CAD-render tiles; collect missing geometry/text/connectivity findings.</text>
+<text x="98" y="4262" class="tiny" >Native DWG needs a reviewed plot or DXF export for independent visual comparison.</text>
+<path class="control" d="M960,4280 L960,4330"/>
+<rect x="80" y="4330" width="1760" height="135" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="97" y="4359" class="role-id" >27</text>
+<rect x="1716" y="4342" width="112" height="30" rx="8" fill="#E9F0FF" stroke="#E9F0FF" stroke-width="2"/>
+<text x="1772" y="4363" class="badge" text-anchor="middle" fill="#2C5CB0" style="fill:#2C5CB0">PYTHON</text>
+<text x="137" y="4361" class="role-title" >Human release gate</text>
+<text x="98" y="4421" class="tiny" >Gate enforced in code; engineering acceptance is a human decision.</text>
+<text x="98" y="4447" class="tiny" >CAD evidence remains NEEDS_HUMAN. Automated comparisons do not certify engineering fidelity.</text>
+<rect x="1532" y="4342" width="125" height="30" rx="8" fill="#FFF0CF" stroke="#FFF0CF" stroke-width="2"/>
+<text x="1594.5" y="4363" class="badge" text-anchor="middle" fill="#936017" style="fill:#936017">HUMAN</text>
+<path class="control" d="M960,4465 L960,4515"/>
+<rect x="80" y="4515" width="1760" height="135" rx="12" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<text x="97" y="4544" class="role-id" >28</text>
+<rect x="1716" y="4527" width="112" height="30" rx="8" fill="#E9F0FF" stroke="#E9F0FF" stroke-width="2"/>
+<text x="1772" y="4548" class="badge" text-anchor="middle" fill="#2C5CB0" style="fill:#2C5CB0">PYTHON</text>
+<text x="137" y="4546" class="role-title" >Evidence reporter</text>
+<text x="98" y="4606" class="tiny" >Publishes graph, tags, review reports, CAD artifacts, QA evidence and execution logs.</text>
+<text x="98" y="4632" class="tiny" >Evidence is written throughout the job as well as at delivery.</text>
+<path class="control" d="M960,4650 L960,4700"/>
+<rect x="80" y="4700" width="1760" height="180" rx="18" fill="#E6F3EE" stroke="#BEDBCD" stroke-width="2"/>
+<text x="106" y="4747" class="stage-title" >DELIVERABLES + TRACEABLE EVIDENCE</text>
+<text x="106" y="4792" class="body" >DWG / DXF   ·   graph.json   ·   tags.csv   ·   review PDF   ·   CAD render   ·   QA findings</text>
+<text x="106" y="4834" class="small" >Source references, immutable build snapshot, review history, agent events and transmission hashes</text>
+<text x="106" y="4867" class="small" >Native SOLIDWORKS .slddrw and provenance sidecar remain on the Windows CAD host.</text>
+<rect x="1900" y="660" width="820" height="590" rx="18" fill="#FFFFFF" stroke="#CCD8E7" stroke-width="2"/>
+<text x="1930" y="708" class="section-title" >CONFIGURABLE MODEL PROVIDERS</text>
+<text x="1930" y="756" class="body" >One VLM + optional LLM endpoint</text>
+<text x="1930" y="792" class="body" >OpenAI-compatible request/response APIs</text>
+<text x="1930" y="828" class="body" >Local / on-prem / cloud configuration</text>
+<text x="1930" y="864" class="body" ></text>
+<text x="1930" y="900" class="body" >VLM: image understanding and comparison</text>
+<text x="1930" y="936" class="body" >LLM: structured graph review and CAD plan</text>
+<text x="1930" y="972" class="body" >Blank LLM model → configured VLM fallback</text>
+<text x="1930" y="1008" class="body" ></text>
+<text x="1930" y="1044" class="body" >Role routing + prompts in Agent Studio</text>
+<text x="1930" y="1080" class="body" >Schemas, bounded retries, cache and budgets</text>
+<text x="1930" y="1116" class="body" >External transfer requires job consent</text>
+<text x="1930" y="1152" class="body" >Private catalog retained for local use</text>
+<path class="service-line" d="M1900,1000 L1867,1000 L1840,1000"/>
+<text x="1900" y="1280" class="tiny" >Dashed links = shared services / evidence, not pipeline bypass</text>
+<rect x="1900" y="1305" width="820" height="710" rx="18" fill="#FFFFFF" stroke="#CCD8E7" stroke-width="2"/>
+<text x="1930" y="1353" class="section-title" >SHARED EVIDENCE / ARTIFACT STORE</text>
+<text x="1930" y="1401" class="body" >Original PDF (source retained)</text>
+<text x="1930" y="1437" class="body" >Overview and overlapping tile plan</text>
+<text x="1930" y="1473" class="body" >Original / cleaned / diff images</text>
+<text x="1930" y="1509" class="body" >Fresh 600-DPI verification crops</text>
+<text x="1930" y="1545" class="body" >Schema-validated per-agent JSON</text>
+<text x="1930" y="1581" class="body" >Content-hash response cache</text>
+<text x="1930" y="1617" class="body" ></text>
+<text x="1930" y="1653" class="body" >Canonical P&amp;ID graph + source IDs</text>
+<text x="1930" y="1689" class="body" >Human decisions and repair proposals</text>
+<text x="1930" y="1725" class="body" >Immutable reviewed build snapshot</text>
+<text x="1930" y="1761" class="body" >CAD files, renders and QA reports</text>
+<text x="1930" y="1797" class="body" >Progress events / transmission audit</text>
+<text x="1930" y="1833" class="body" ></text>
+<text x="1930" y="1869" class="body" >Stores are read/written throughout flow.</text>
+<text x="1930" y="1905" class="body" >Shared context is explicit evidence;</text>
+<text x="1930" y="1941" class="body" >there is no hidden autonomous CAD writer.</text>
+<path class="service-line" d="M1840,1430 L1900,1430"/>
+<rect x="1900" y="2105" width="820" height="660" rx="18" fill="#FFFFFF" stroke="#CCD8E7" stroke-width="2"/>
+<text x="1930" y="2153" class="section-title" >CONTROL PLANE + CONFIGURATION</text>
+<text x="1930" y="2201" class="body" >Connections:</text>
+<text x="1930" y="2237" class="body" >• VLM / LLM endpoint, model, mode, key</text>
+<text x="1930" y="2273" class="body" >• AutoCAD / SOLIDWORKS MCP settings</text>
+<text x="1930" y="2309" class="body" >• Optional external DWG converter</text>
+<text x="1930" y="2345" class="body" ></text>
+<text x="1930" y="2381" class="body" >Agent Studio:</text>
+<text x="1930" y="2417" class="body" >• Role enablement and provider routing</text>
+<text x="1930" y="2453" class="body" >• Prompt overrides / parallel call limit</text>
+<text x="1930" y="2489" class="body" >• Call / time / estimated-cost budgets</text>
+<text x="1930" y="2525" class="body" ></text>
+<text x="1930" y="2561" class="body" >API and job controls:</text>
+<text x="1930" y="2597" class="body" >• Secret-redacted public configuration</text>
+<text x="1930" y="2633" class="body" >• Explicit data-transfer consent</text>
+<text x="1930" y="2669" class="body" >• Queue, cancellation and persistence</text>
+<text x="1930" y="2705" class="body" >• Review schema / reference validation</text>
+<rect x="1900" y="2825" width="820" height="480" rx="18" fill="#FFFFFF" stroke="#CCD8E7" stroke-width="2"/>
+<text x="1930" y="2873" class="section-title" >LOCAL LAUNCH + DEPLOYMENT</text>
+<text x="1930" y="2921" class="body" >Windows: Start-LineaForge.cmd</text>
+<text x="1930" y="2957" class="body" >→ one Python/FastAPI server</text>
+<text x="1930" y="2993" class="body" >→ compiled React served at same origin</text>
+<text x="1930" y="3029" class="body" ></text>
+<text x="1930" y="3065" class="body" >Docker / Linux deployment:</text>
+<text x="1930" y="3101" class="body" >React + FastAPI + persistent /data</text>
+<text x="1930" y="3137" class="body" >→ authenticated HTTPS / VPN</text>
+<text x="1930" y="3173" class="body" >→ separate Windows native CAD bridge</text>
+<text x="1930" y="3209" class="body" ></text>
+<text x="1930" y="3245" class="body" >One FastAPI worker per workspace</text>
+<text x="1930" y="3281" class="body" >Two job workers; bounded queue</text>
+<rect x="1900" y="3365" width="820" height="660" rx="18" fill="#FFFFFF" stroke="#CCD8E7" stroke-width="2"/>
+<text x="1930" y="3413" class="section-title" >MCP CONTRACT + NATIVE CAD HOST</text>
+<text x="1930" y="3461" class="body" >Initialize / discover / validate tool schemas</text>
+<text x="1930" y="3497" class="body" >Preflight complete plan before mutation</text>
+<text x="1930" y="3533" class="body" >One drawing job per CAD bridge</text>
+<text x="1930" y="3569" class="body" ></text>
+<text x="1930" y="3605" class="body" >Core typed tools:</text>
+<text x="1930" y="3641" class="body" >new_drawing · set_units · create_layer</text>
+<text x="1930" y="3677" class="body" >define_block · insert_block</text>
+<text x="1930" y="3713" class="body" >draw_polyline · add_text</text>
+<text x="1930" y="3749" class="body" >save_drawing · reopen_and_enumerate</text>
+<text x="1930" y="3785" class="body" >Bundled extras: circle / arc / read_artifact</text>
+<text x="1930" y="3821" class="body" ></text>
+<text x="1930" y="3857" class="body" >HTTPS bearer token + trusted hosts</text>
+<text x="1930" y="3893" class="body" >Path confinement + bounded downloads</text>
+<text x="1930" y="3929" class="body" >Final artifact SHA-256 + file signature</text>
+<text x="1930" y="3965" class="body" >SOLIDWORKS route is 2D drawing/sketch</text>
+<path class="service-line" d="M1840,3788 L1900,3788"/>
+<rect x="1900" y="4085" width="820" height="490" rx="18" fill="#FFFFFF" stroke="#CCD8E7" stroke-width="2"/>
+<text x="1930" y="4133" class="section-title" >QUALITY + PRODUCT BOUNDARIES</text>
+<text x="1930" y="4181" class="body" >Human decisions control CAD readiness</text>
+<text x="1930" y="4217" class="body" >and engineering release.</text>
+<text x="1930" y="4253" class="body" ></text>
+<text x="1930" y="4289" class="body" >MCP connection success verifies protocol</text>
+<text x="1930" y="4325" class="body" >and tool contracts; native drawing output</text>
+<text x="1930" y="4361" class="body" >requires licensed application acceptance.</text>
+<text x="1930" y="4397" class="body" ></text>
+<text x="1930" y="4433" class="body" >Real VLM symbol / tag / connectivity</text>
+<text x="1930" y="4469" class="body" >accuracy still needs measured evaluation</text>
+<text x="1930" y="4505" class="body" >on representative reviewed drawings.</text>
+<text x="1930" y="4541" class="body" ></text>
+<text x="1930" y="4577" class="body" >No automatic verified cross-sheet plant merge.</text>
+<rect x="1900" y="4635" width="820" height="245" rx="18" fill="#F7F9FC" stroke="#CCD8E7" stroke-width="2"/>
+<text x="1930" y="4683" class="section-title" >EXECUTION LEGEND</text>
+<rect x="1930" y="4712" width="112" height="30" rx="8" fill="#E5F8FA" stroke="#E5F8FA" stroke-width="2"/>
+<text x="1986" y="4733" class="badge" text-anchor="middle" fill="#087B89" style="fill:#087B89">VLM</text>
+<text x="2060" y="4735" class="small" >Image-capable model role</text>
+<rect x="1930" y="4753" width="112" height="30" rx="8" fill="#EEE9FF" stroke="#EEE9FF" stroke-width="2"/>
+<text x="1986" y="4774" class="badge" text-anchor="middle" fill="#6846B2" style="fill:#6846B2">LLM</text>
+<text x="2060" y="4776" class="small" >Structured text model role</text>
+<rect x="1930" y="4794" width="112" height="30" rx="8" fill="#E9F0FF" stroke="#E9F0FF" stroke-width="2"/>
+<text x="1986" y="4815" class="badge" text-anchor="middle" fill="#2C5CB0" style="fill:#2C5CB0">PYTHON</text>
+<text x="2060" y="4817" class="small" >Deterministic implementation</text>
+<rect x="1930" y="4835" width="112" height="30" rx="8" fill="#FFF0CF" stroke="#FFF0CF" stroke-width="2"/>
+<text x="1986" y="4856" class="badge" text-anchor="middle" fill="#936017" style="fill:#936017">HUMAN</text>
+<text x="2060" y="4858" class="small" >Operator / engineering decision</text>
+<text x="80" y="4960" class="stage-title" >PARALLEL NON-P&amp;ID TOOLS</text>
+<text x="80" y="5004" class="body" >PDF ↔ DXF conversion · optional external DWG converter · PDF merge / split / organize / compress</text>
+<text x="80" y="5046" class="small" >Implementation map: agentic.py · providers.py · agentic_qa.py · MCP client / bridge · AutoCAD / SOLIDWORKS adapters</text>
+<text x="2720" y="5046" class="small" text-anchor="end">All 28 catalog roles shown · repair is optional</text>
+</svg>

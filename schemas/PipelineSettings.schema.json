@@ -1,0 +1,85 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "provider_mode": {
+      "default": "local",
+      "enum": [
+        "local",
+        "cloud"
+      ],
+      "title": "Provider Mode",
+      "type": "string"
+    },
+    "dpi": {
+      "default": 300,
+      "maximum": 600,
+      "minimum": 300,
+      "title": "Dpi",
+      "type": "integer"
+    },
+    "tile_size": {
+      "default": 1536,
+      "maximum": 4096,
+      "minimum": 256,
+      "title": "Tile Size",
+      "type": "integer"
+    },
+    "overlap": {
+      "default": 0.2,
+      "maximum": 0.5,
+      "minimum": 0.05,
+      "title": "Overlap",
+      "type": "number"
+    },
+    "confidence_threshold": {
+      "default": 0.85,
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confidence Threshold",
+      "type": "number"
+    },
+    "keep_markups": {
+      "default": true,
+      "title": "Keep Markups",
+      "type": "boolean"
+    },
+    "max_calls": {
+      "default": 200,
+      "minimum": 1,
+      "title": "Max Calls",
+      "type": "integer"
+    },
+    "max_seconds": {
+      "default": 600,
+      "minimum": 1,
+      "title": "Max Seconds",
+      "type": "integer"
+    },
+    "max_estimated_cost": {
+      "default": 5,
+      "minimum": 0,
+      "title": "Max Estimated Cost",
+      "type": "number"
+    },
+    "estimated_cost_per_call": {
+      "default": 0.02,
+      "minimum": 0,
+      "title": "Estimated Cost Per Call",
+      "type": "number"
+    },
+    "cloud_consent": {
+      "default": false,
+      "title": "Cloud Consent",
+      "type": "boolean"
+    },
+    "retries": {
+      "default": 2,
+      "maximum": 3,
+      "minimum": 0,
+      "title": "Retries",
+      "type": "integer"
+    }
+  },
+  "title": "PipelineSettings",
+  "type": "object"
+}

@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools==84.2.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lineaforge"
+version = "0.2.0"
+description = "Local-first 2D drawing conversion and reviewable P&ID digitization"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "PyMuPDF==1.26.5", "ezdxf==1.4.3", "PySide6==6.10.0",
+  "opencv-python-headless==4.12.0.88", "numpy==2.2.6", "Pillow==12.3.0",
+  "pydantic==2.11.9", "pydantic-settings==2.11.0", "httpx==0.28.1", "mcp==1.30.0",
+  "fastapi==0.160.0", "starlette==1.9.0", "uvicorn==0.54.0",
+  "python-multipart==0.0.32", "sse-starlette==3.5.0"
+]
+
+[project.optional-dependencies]
+build = ["pyinstaller==6.16.0", "pytest==8.4.2"]
+
+[project.scripts]
+lineaforge = "lineaforge.cli:main"
+lineaforge-desktop = "lineaforge.desktop:main"
+lineaforge-cad-server = "lineaforge.cad_server:main"
+lineaforge-web = "lineaforge.web_launcher:main"
+lineaforge-cad-bridge = "lineaforge.mcp_bridge:main"
+
+[tool.setuptools.packages.find]
+include = ["lineaforge*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["local_cad: requires local CAD", "integration: requires configured local VLM"]

@@ -1,0 +1,618 @@
+[
+  {
+    "name": "new_drawing",
+    "title": null,
+    "description": "Create a new AutoCAD document; leaves existing user documents intact.",
+    "inputSchema": {
+      "properties": {},
+      "title": "new_drawingArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  },
+  {
+    "name": "set_units",
+    "title": null,
+    "description": "Set millimetre drawing units.",
+    "inputSchema": {
+      "properties": {
+        "units": {
+          "default": "mm",
+          "title": "Units",
+          "type": "string"
+        }
+      },
+      "title": "set_unitsArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  },
+  {
+    "name": "create_layer",
+    "title": null,
+    "description": "Create/update a layer. LF-DASHED and LF-DASHDOTDOT map to installed AutoCAD linetypes.",
+    "inputSchema": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "color": {
+          "default": 7,
+          "title": "Color",
+          "type": "integer"
+        },
+        "linetype": {
+          "default": "CONTINUOUS",
+          "title": "Linetype",
+          "type": "string"
+        },
+        "lineweight": {
+          "default": 25,
+          "title": "Lineweight",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "create_layerArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  },
+  {
+    "name": "define_block",
+    "title": null,
+    "description": "Define a block from literal local polyline/circle/arc geometry and named attributes.",
+    "inputSchema": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "geometry": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Geometry",
+          "type": "array"
+        },
+        "attribute_tags": {
+          "default": [
+            "TAG",
+            "SERVICE",
+            "SIZE",
+            "SPEC",
+            "SOURCE_ID",
+            "CONFIDENCE"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "title": "Attribute Tags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "geometry"
+      ],
+      "title": "define_blockArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  },
+  {
+    "name": "insert_block",
+    "title": null,
+    "description": "Insert a named block; rotation is degrees counterclockwise in drawing coordinates.",
+    "inputSchema": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "position": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Position",
+          "type": "array"
+        },
+        "attributes": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Attributes",
+          "type": "object"
+        },
+        "layer": {
+          "default": "0",
+          "title": "Layer",
+          "type": "string"
+        },
+        "scale": {
+          "default": 1,
+          "title": "Scale",
+          "type": "number"
+        },
+        "rotation": {
+          "default": 0,
+          "title": "Rotation",
+          "type": "number"
+        },
+        "source_id": {
+          "default": "",
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "position",
+        "attributes"
+      ],
+      "title": "insert_blockArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  },
+  {
+    "name": "draw_polyline",
+    "title": null,
+    "description": "Draw connected literal 2D points in millimetres.",
+    "inputSchema": {
+      "properties": {
+        "points": {
+          "items": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "title": "Points",
+          "type": "array"
+        },
+        "layer": {
+          "default": "0",
+          "title": "Layer",
+          "type": "string"
+        },
+        "closed": {
+          "default": false,
+          "title": "Closed",
+          "type": "boolean"
+        },
+        "source_id": {
+          "default": "",
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "points"
+      ],
+      "title": "draw_polylineArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  },
+  {
+    "name": "draw_line",
+    "title": null,
+    "description": "Draw a two-point line without arbitrary CAD commands.",
+    "inputSchema": {
+      "properties": {
+        "start": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Start",
+          "type": "array"
+        },
+        "end": {
+          "items": {
+            "type": "number"
+          },
+          "title": "End",
+          "type": "array"
+        },
+        "layer": {
+          "default": "0",
+          "title": "Layer",
+          "type": "string"
+        },
+        "source_id": {
+          "default": "",
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ],
+      "title": "draw_lineArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  },
+  {
+    "name": "draw_circle",
+    "title": null,
+    "description": "Draw a circle with positive radius.",
+    "inputSchema": {
+      "properties": {
+        "center": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Center",
+          "type": "array"
+        },
+        "radius": {
+          "title": "Radius",
+          "type": "number"
+        },
+        "layer": {
+          "default": "0",
+          "title": "Layer",
+          "type": "string"
+        },
+        "source_id": {
+          "default": "",
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "center",
+        "radius"
+      ],
+      "title": "draw_circleArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  },
+  {
+    "name": "draw_arc",
+    "title": null,
+    "description": "Draw an arc; angles are counterclockwise degrees.",
+    "inputSchema": {
+      "properties": {
+        "center": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Center",
+          "type": "array"
+        },
+        "radius": {
+          "title": "Radius",
+          "type": "number"
+        },
+        "start_angle": {
+          "title": "Start Angle",
+          "type": "number"
+        },
+        "end_angle": {
+          "title": "End Angle",
+          "type": "number"
+        },
+        "layer": {
+          "default": "0",
+          "title": "Layer",
+          "type": "string"
+        },
+        "source_id": {
+          "default": "",
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "center",
+        "radius",
+        "start_angle",
+        "end_angle"
+      ],
+      "title": "draw_arcArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  },
+  {
+    "name": "add_text",
+    "title": null,
+    "description": "Add literal source text; text is never interpreted as a CAD command.",
+    "inputSchema": {
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "position": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Position",
+          "type": "array"
+        },
+        "height": {
+          "title": "Height",
+          "type": "number"
+        },
+        "layer": {
+          "default": "0",
+          "title": "Layer",
+          "type": "string"
+        },
+        "rotation": {
+          "default": 0,
+          "title": "Rotation",
+          "type": "number"
+        },
+        "source_id": {
+          "default": "",
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "position",
+        "height"
+      ],
+      "title": "add_textArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  },
+  {
+    "name": "add_mtext",
+    "title": null,
+    "description": "Add multiline text.",
+    "inputSchema": {
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "position": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Position",
+          "type": "array"
+        },
+        "height": {
+          "title": "Height",
+          "type": "number"
+        },
+        "width": {
+          "title": "Width",
+          "type": "number"
+        },
+        "layer": {
+          "default": "0",
+          "title": "Layer",
+          "type": "string"
+        },
+        "rotation": {
+          "default": 0,
+          "title": "Rotation",
+          "type": "number"
+        },
+        "source_id": {
+          "default": "",
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "position",
+        "height",
+        "width"
+      ],
+      "title": "add_mtextArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  },
+  {
+    "name": "set_attribute",
+    "title": null,
+    "description": "Update an existing block attribute by handle and exact tag.",
+    "inputSchema": {
+      "properties": {
+        "handle": {
+          "title": "Handle",
+          "type": "string"
+        },
+        "tag": {
+          "title": "Tag",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "handle",
+        "tag",
+        "value"
+      ],
+      "title": "set_attributeArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  },
+  {
+    "name": "create_layout",
+    "title": null,
+    "description": "Create a named paper-space layout.",
+    "inputSchema": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "create_layoutArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  },
+  {
+    "name": "create_viewport",
+    "title": null,
+    "description": "Create a paper-space viewport in the active layout.",
+    "inputSchema": {
+      "properties": {
+        "center": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Center",
+          "type": "array"
+        },
+        "width": {
+          "title": "Width",
+          "type": "number"
+        },
+        "height": {
+          "title": "Height",
+          "type": "number"
+        }
+      },
+      "required": [
+        "center",
+        "width",
+        "height"
+      ],
+      "title": "create_viewportArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  },
+  {
+    "name": "save_drawing",
+    "title": null,
+    "description": "Save a DWG/DXF inside the configured output root (AutoCAD 2013 format).",
+    "inputSchema": {
+      "properties": {
+        "output_path": {
+          "title": "Output Path",
+          "type": "string"
+        }
+      },
+      "required": [
+        "output_path"
+      ],
+      "title": "save_drawingArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  },
+  {
+    "name": "reopen_and_enumerate",
+    "title": null,
+    "description": "Reopen saved output and count model-space entities by layer/type.",
+    "inputSchema": {
+      "properties": {
+        "output_path": {
+          "title": "Output Path",
+          "type": "string"
+        }
+      },
+      "required": [
+        "output_path"
+      ],
+      "title": "reopen_and_enumerateArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  },
+  {
+    "name": "plot_pdf",
+    "title": null,
+    "description": "Plot the active layout through the installed DWG To PDF.pc3 driver.",
+    "inputSchema": {
+      "properties": {
+        "output_path": {
+          "title": "Output Path",
+          "type": "string"
+        },
+        "canonical_media_name": {
+          "default": "",
+          "title": "Canonical Media Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "output_path"
+      ],
+      "title": "plot_pdfArguments",
+      "type": "object"
+    },
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  }
+]

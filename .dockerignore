@@ -1,0 +1,16 @@
+.git
+.runtime
+.webruntime
+.venv
+.webqa
+.pytest_cache
+**/__pycache__
+web/node_modules
+web/dist
+landing
+artifacts
+build
+dist
+docs/dataset_crops
+.env
+*.zip
